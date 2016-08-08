@@ -40,6 +40,50 @@ function userLoggedInAdvanced (req, res, next) {
   })
 }
 
+function expertise (req, res) {
+  User.find({expertise: req.params.expertise}, function (err, usersArray) {
+    if (err) return res.status(401).json({error: '/users users/:expertise error 1'})
+    res.status(200).json({usersArray: usersArray})
+  })
+}
+
+function showUser (req, res) {
+  console.log(req.params.id)
+  User.findById(req.params.id, function (err, user) {
+    if (err) return res.status(401).json({error: '/users users/:id error 1'})
+    res.status(200).json({user: user})
+  })
+}
+
+function updateProfile (req, res, next) {
+  User.findOne({email: req.currentUser.email}, (err, user) => {
+    if (err) res.status(401).json({error: 'Cannot find user'})
+    else {
+      user.name = req.body.name
+      user.email = req.body.email
+      user.password = req.body.password
+      user.expertise = req.body.expertise
+      user.workexp = req.body.workexp
+      user.skills = req.body.skills
+      user.education = req.body.education
+      user.age = req.body.age
+      user.location = req.body.location
+      user.partnerexpertise = req.body.partnerexpertise
+      user.partnerworkexp = req.body.partnerworkexp
+      user.partnerskills = req.body.partnerskills
+
+      user.save(function (err) {
+        if (err) res.status(400).json({error: 'cannot update user'})
+        res.status(200).json({message: 'User successfully updated!'})
+        next()
+      })
+    }
+  })
+}
+
 module.exports = {
-  userLoggedIn: userLoggedInAdvanced
+  userLoggedIn: userLoggedInAdvanced,
+  expertise: expertise,
+  showUser: showUser,
+  updateProfile: updateProfile
 }

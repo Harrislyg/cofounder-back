@@ -1,13 +1,23 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
-const uuid = require('uuid');
+const uuid = require('uuid')
 
 const UserSchema = new mongoose.Schema({
   name: { type: String },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  auth_token: { type: String, unique: true }
+  auth_token: { type: String, unique: true },
+  expertise: {type: String},
+  workexp: String,
+  skills: String,
+  education: String,
+  age: String,
+  location: String,
+  partnerexpertise: String,
+  partnerworkexp: String,
+  partnerskills: String
+
 })
 
 UserSchema.pre('save', function (done) {

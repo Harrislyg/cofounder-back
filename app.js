@@ -39,7 +39,7 @@ app.post('/signin', (req, res) => {
     user.authenticate(userParams.password, (err, isMatch) => {
       if (err || !isMatch) return res.status(401).json({error: 'email or password is invalid'})
 
-      res.status(201).json({message: 'user logged in', auth_token: user.auth_token})
+      res.status(201).json({message: 'user logged in', name: user.name, auth_token: user.auth_token})
     })
   })
 })
@@ -54,7 +54,8 @@ app.get('/secret', appController.userLoggedIn, (req, res) => {
 })
 // get the currently logged in user
 app.get('/user', appController.userLoggedIn, (req, res) => {
-  res.status(200).json({name: 'Jeremiah'})
+  var name = req.currentUser.name
+  res.status(200).json({name: name})
 })
 
 // user specific route
@@ -67,6 +68,11 @@ app.get('/users-secret', appController.userLoggedIn, (req, res) => {
   // else
   res.status(200).json({secret: 'content'})
 })
+
+app.get('/users/expertise/:expertise', appController.expertise)
+app.get('/users/:id', appController.showUser)
+app.put('/user/profile', appController.userLoggedIn, appController.updateProfile)
+
 app.listen(3000, () => {
   console.log('listening on port 3000')
 })
