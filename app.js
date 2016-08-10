@@ -1,3 +1,5 @@
+require('dotenv').config({silent: true})
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -17,6 +19,8 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, User-Email, Auth-Token, Authorization')
+  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT')
+
   next()
 })
 
@@ -55,7 +59,8 @@ app.get('/secret', appController.userLoggedIn, (req, res) => {
 // get the currently logged in user
 app.get('/user', appController.userLoggedIn, (req, res) => {
   var name = req.currentUser.name
-  res.status(200).json({name: name})
+  var auth_token = req.currentUser.auth_token
+  res.status(200).json({name: name, auth_token: auth_token})
 })
 
 // user specific route
@@ -72,6 +77,7 @@ app.get('/users-secret', appController.userLoggedIn, (req, res) => {
 app.get('/users/expertise/:expertise', appController.expertise)
 app.get('/users/:id', appController.showUser)
 app.put('/user/profile', appController.userLoggedIn, appController.updateProfile)
+app.get('/user/profile', appController.userLoggedIn, appController.getProfile)
 
 app.listen(3000, () => {
   console.log('listening on port 3000')

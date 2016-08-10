@@ -74,9 +74,18 @@ function updateProfile (req, res, next) {
 
       user.save(function (err) {
         if (err) res.status(400).json({error: 'cannot update user'})
-        res.status(200).json({message: 'User successfully updated!'})
+        res.status(200).json(user)
         next()
       })
+    }
+  })
+}
+
+function getProfile (req, res, next) {
+  User.findOne({email: req.currentUser.email}, (err, user) => {
+    if (err) res.status(401).json({error: 'Cannot find user'})
+    else {
+      res.status(201).json({userData: req.currentUser})
     }
   })
 }
@@ -85,5 +94,7 @@ module.exports = {
   userLoggedIn: userLoggedInAdvanced,
   expertise: expertise,
   showUser: showUser,
-  updateProfile: updateProfile
+  updateProfile: updateProfile,
+  getProfile: getProfile
+
 }

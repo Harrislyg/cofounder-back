@@ -4,17 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "source .env; nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node models/seed.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.5.4",
+    "mongoose-seed": "^0.3.0",
     "morgan": "^1.7.0",
     "uuid": "^2.0.2"
   }

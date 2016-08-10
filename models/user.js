@@ -10,13 +10,13 @@ const UserSchema = new mongoose.Schema({
   auth_token: { type: String, unique: true },
   expertise: {type: String},
   workexp: String,
-  skills: String,
+  skills: [String],
   education: String,
   age: String,
   location: String,
   partnerexpertise: String,
-  partnerworkexp: String,
-  partnerskills: String
+  partnerworkexp: [String],
+  partnerskills: [String]
 
 })
 
