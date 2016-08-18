@@ -60,7 +60,7 @@ app.post('/signup', (req, res) => {
   user.save((err, user) => {
     if (err) return res.status(422).json({error: err.message})
 
-    res.status(201).json({message: 'user created', auth_token: user.auth_token})
+    res.status(201).json({message: 'user created', auth_token: user.auth_token, profileImg: user.profileImg})
   })
 })
 

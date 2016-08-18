@@ -16,7 +16,8 @@ const UserSchema = new mongoose.Schema({
   location: String,
   partnerexpertise: String,
   partnerworkexp: [String],
-  partnerskills: [String]
+  partnerskills: [String],
+  profileImg: String
 
 })
 

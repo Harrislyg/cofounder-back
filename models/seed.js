@@ -33,7 +33,8 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Designer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
       },
       {
         'name': 'Bobby Goh',
@@ -47,7 +48,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Designer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       },
       {
         'name': 'Amelia Tan',
@@ -61,7 +64,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Designer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       },
       {
         'name': 'Elias Lim',
@@ -75,7 +80,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Designer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       },
       {
         'name': 'Jon',
@@ -89,7 +96,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Developer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       },
       {
         'name': 'Gab',
@@ -103,7 +112,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Hustler',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       },
       {
         'name': 'Jeremiah',
@@ -117,7 +128,9 @@ var data = [
         'location': 'Singapore',
         'partnerexpertise': 'Developer',
         'partnerworkexp': ['Technology', 'F&B'],
-        'partnerskills': ['UI', 'UX']
+        'partnerskills': ['UI', 'UX'],
+        'profileImg': 'https://cofounder-sg.s3.amazonaws.com/happy.png'
+
       }
     ]
   }
