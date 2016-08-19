@@ -73,7 +73,7 @@ app.post('/signin', (req, res) => {
     user.authenticate(userParams.password, (err, isMatch) => {
       if (err || !isMatch) return res.status(401).json({error: 'email or password is invalid'})
 
-      res.status(201).json({message: 'user logged in', name: user.name, auth_token: user.auth_token})
+      res.status(201).json({message: 'user logged in', name: user.name, auth_token: user.auth_token, email: user.email, profileImg: user.profileImg})
     })
   })
 })
