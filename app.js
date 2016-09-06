@@ -109,6 +109,6 @@ app.get('/users/:id', appController.showUser)
 app.put('/user/profile', appController.userLoggedIn, appController.updateProfile)
 app.get('/user/profile', appController.userLoggedIn, appController.getProfile)
 
-app.listen(3000, () => {
-  console.log('listening on port 3000')
+app.listen(process.env.PORT, () => {
+  console.log(`Server Listening on port ${process.env.PORT}`)
 })
