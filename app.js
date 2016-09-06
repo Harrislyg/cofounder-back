@@ -80,7 +80,7 @@ app.post('/signin', (req, res) => {
 
 // unprotected root route
 app.get('/', (req, res) => {
-  res.status(200).json({message: 'hello'})
+  res.status(200).json({message: 'hello Heroku'})
 })
 // secret routes
 app.get('/secret', appController.userLoggedIn, (req, res) => {
