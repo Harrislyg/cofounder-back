@@ -19,6 +19,7 @@ function userLoggedIn (req, res, next) {
 function userLoggedInAdvanced (req, res, next) {
   // first check if we have HTTP Basic Auth
   const auth = basicAuth(req)
+  // changed var to let because heroku still doesn't support let
   var userEmail, authToken
   if (auth) {
     userEmail = auth.name
