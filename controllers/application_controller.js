@@ -19,7 +19,7 @@ function userLoggedIn (req, res, next) {
 function userLoggedInAdvanced (req, res, next) {
   // first check if we have HTTP Basic Auth
   const auth = basicAuth(req)
-  let userEmail, authToken
+  var userEmail, authToken
   if (auth) {
     userEmail = auth.name
     authToken = auth.pass
