@@ -3,7 +3,6 @@ require('dotenv').config({silent: true})
 const express = require('express')
 const aws = require('aws-sdk')
 
-
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const logger = require('morgan')
@@ -17,7 +16,6 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-
 // enable cors for all routes
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -28,8 +26,8 @@ app.use(function (req, res, next) {
 
 app.get('/sign-s3', (req, res) => {
   const s3 = new aws.S3();
-  const fileName = req.query['file-name'];
-  const fileType = req.query['file-type'];
+  const fileName = req.query['file-name']
+  const fileType = req.query['file-type']
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
